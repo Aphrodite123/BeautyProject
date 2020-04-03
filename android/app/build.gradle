@@ -8,6 +8,7 @@ project.ext.react = [
 ]
 
 def enableHermes = project.ext.react.get("enableHermes", false);
+def jscFlavor = 'org.webkit:android-jsc:+'
 
 android {
     compileSdkVersion 29
@@ -26,6 +27,7 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+
     }
 
     buildTypes {

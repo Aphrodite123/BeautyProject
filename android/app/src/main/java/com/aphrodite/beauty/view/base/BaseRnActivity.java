@@ -1,8 +1,8 @@
 package com.aphrodite.beauty.view.base;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 
@@ -21,8 +21,6 @@ import com.facebook.react.shell.MainReactPackage;
 public abstract class BaseRnActivity extends BaseActivity implements DefaultHardwareBackBtnHandler {
     private ReactRootView mReactRootView;
     private ReactInstanceManager mReactInstanceManager;
-
-    private ViewGroup mViewGroup;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,19 +65,10 @@ public abstract class BaseRnActivity extends BaseActivity implements DefaultHard
         mReactInstanceManager = builder.build();
 
         mReactRootView.startReactApplication(mReactInstanceManager, getModuleName(), null);
-
-        mViewGroup = getNativeRootView();
-        if (null == mViewGroup) {
-            return;
-        }
-
-        mViewGroup.removeAllViews();
         initView(mReactRootView);
     }
 
     protected abstract String getModuleName();
-
-    protected abstract ViewGroup getNativeRootView();
 
     protected abstract void initView(ReactRootView reactRootView);
 

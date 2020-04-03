@@ -1,7 +1,6 @@
 package com.aphrodite.beauty;
 
 import android.os.Bundle;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.aphrodite.beauty.view.base.BaseRnActivity;
@@ -44,16 +43,12 @@ public class MainActivity extends BaseRnActivity {
     }
 
     @Override
-    protected ViewGroup getNativeRootView() {
-        return mRoot;
-    }
-
-    @Override
     protected void initView(ReactRootView reactRootView) {
         if (null == mRoot) {
             return;
         }
 
+        mRoot.removeAllViews();
         mRoot.addView(reactRootView);
     }
 

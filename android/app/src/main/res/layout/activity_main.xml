@@ -5,4 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="HelloWorld!"
+        android:textColor="@android:color/black" />
+
 </LinearLayout>
