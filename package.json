@@ -3,13 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
+    "jsc-android": "^241213.1.0",
     "react": "16.11.0",
     "react-native": "0.62.0"
   },
